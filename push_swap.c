@@ -14,16 +14,16 @@ int main(int ac, char **av)
     init_stack_a(&a, ac, av);
     if (is_sorted(a))
 	{
-		ft_freelst(a);
-		free(b);
-		return(1);
+        ft_freelst(a);
+        free(b);
+        return(1);
 	}
     if (ft_lstsize == 3)
         sort_three();
     else if (ft_lstsize == 5)
-	sort_five();
+        sort_five();
     else
-	sort_radix();
+        sort_radix();
     ft_freelst(a);
     ft_free(b);
     return (0);
