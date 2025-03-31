@@ -9,19 +9,19 @@ void    swap(t_stack **stack)
 	*stack->next->value = temp;
 }
 
-void	sa(t_node **a)
+void	sa(t_stack **a)
 {
 	swap(a);
 	ft_putendl_fd("sa", 1);
 }
 
-void	sb(t_node **b)
+void	sb(t_stack **b)
 {
 	swap(b);
 	ft_putendl_fd("sb", 1);
 }
 
-void	ss(t_node **a, t_node **b)
+void	ss(t_stack **a, t_stack **b)
 {
 	swap(a);
 	swap(b);

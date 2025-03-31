@@ -60,8 +60,8 @@ int is_valide(char *str)
 
 int is_duplicate(t_stack *a)
 {
-    t_node	*temp;
-	t_node	*temp2;
+    t_stack	*temp;
+	t_stack	*temp2;
 
 	temp = a;
 	temp2 = a;
@@ -79,7 +79,7 @@ int is_duplicate(t_stack *a)
 	return (0);
 }
 
-int	is_sorted(t_node *a)
+int	is_sorted(t_stack *a)
 {
 	while(a)
 	{
