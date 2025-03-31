@@ -2,9 +2,9 @@
 
 void    swap(t_stack **stack)
 {
-    int temp;
+	int temp;
 
-    temp = *stack->value;
+	temp = *stack->value;
 	*stack->value = *stack->next->value;
 	*stack->next->value = temp;
 }
