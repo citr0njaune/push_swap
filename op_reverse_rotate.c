@@ -3,7 +3,7 @@
 void    reverse_rotate(t_stack **stack)
 {
 	t_stack *prev;
-    t_stack *last;
+	t_stack *last;
 
 	last = *stack;
 	while (last->next)
