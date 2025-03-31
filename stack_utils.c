@@ -55,7 +55,7 @@ void    error_mess(int ac, int choice,  t_stack **a)
 
 void	ft_freelst(t_node *a)
 {
-	t_node	*curr;
+	t_stack	*curr;
 	t_node	*temp;
 
 	curr = a;
