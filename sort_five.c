@@ -9,13 +9,14 @@ void	sort_five(t_stack **a, t_stack **b)
 	{
 		min_position = find_min(a);
 		min_to_top(a, min);
-		pb();
+		pb(b, a);
 	}
 	sort_three(a);
-
+	pa(a, b);
+	pa(a,b);
 }
 
-t_stack	*find_min(t_stack **a)
+int	find_min(t_stack **a)
 {
 	t_stack	*curr;
 	int	position;
@@ -41,7 +42,9 @@ t_stack	*find_min(t_stack **a)
 void	min_to_top(t_stack **a, int	min_position)
 {
 	t_stack	*min;
+	t_stack	*temp;
 
+	temp = *a;
 	min = malloc(sizeof(t_stack));
 	if (!min)
 	{
@@ -51,8 +54,15 @@ void	min_to_top(t_stack **a, int	min_position)
 	while (min_position > 0)
 	{
 		min_position--;
-		*a = *a->next;
+		temp = temp->next;
 	}
-	
-
+	min = temp;
+	min->next = *a;
+	a = a->next;
+	while (a != temp)
+		a = a->next;
+	if (a->next->next != 0)
+		a->next = a->next->next;
+	else
+		a->next = 0
 }
