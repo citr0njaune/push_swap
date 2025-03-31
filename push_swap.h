@@ -39,6 +39,16 @@ int     is_duplicate(t_stack *a);
 int	    is_sorted(t_node *a);
 void	push_num(t_stack **a, int value, t_stack *temp);
 
+void	sort_five(t_stack **a, t_stack **b);
+int     find_min(t_stack **a);
+void	min_to_top(t_stack **a, int	min_position);
+
+void	sort_three(t_stack **a);
+
+void	sort_five(t_stack **a, t_stack **b);
+int     find_min(t_stack **a);
+void	min_to_top(t_stack **a, int	min_position);
+
 void    init_stack_a(t_stack **a, int ac, char **av);
 void    error_mess(int ac, int choice,  t_stack **a);
 void	ft_freelst(t_node *a);
