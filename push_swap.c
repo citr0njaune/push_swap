@@ -20,10 +20,10 @@ int main(int ac, char **av)
 	}
     if (ft_lstsize == 3)
         sort_three();
-	else if (ft_lstsize == 5)
-	    sort_five();
-	else
-	    sort_radix();
+    else if (ft_lstsize == 5)
+	sort_five();
+    else
+	sort_radix();
     ft_freelst(a);
     ft_free(b);
     return (0);
