@@ -2,7 +2,18 @@
 
 void    reverse_rotate(t_stack **stack)
 {
-    
+	t_stack *prev;
+    t_stack *last;
+
+	last = *stack;
+	while (last->next)
+	{
+		prev = last;
+		last = last->next
+	}
+	prev->next = 0;
+	last->next = *stack;
+	*stack = last;
 }
 
 void	rra(t_node **a)
