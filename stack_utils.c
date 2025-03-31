@@ -53,17 +53,17 @@ void    error_mess(int ac, int choice,  t_stack **a)
     }
 }
 
-void	ft_freelst(t_node *a)
+void	ft_freelst(t_stack *a)
 {
 	t_stack	*curr;
-	t_node	*temp;
+	t_stack	*temp;
 
 	curr = a;
 	while (curr)
 	{
 		temp = curr;
 		curr = curr->next;
-		free(temp);
+		ft_free(temp);
 	}
 }
 
