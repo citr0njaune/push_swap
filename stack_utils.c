@@ -12,31 +12,15 @@
 
 #include "push_swap.h"
 
-void	init_stack_a(t_stack **a, int ac, char **av)
+void    init_stack(t_stack **a, int ac, char **av)
 {
-	t_stack	*temp;
-	int		i;
+    char    **nb;
 
-	*a = malloc(sizeof(t_stack));
-	temp = *a;
-	parsing_args(&a, ac, av, temp);
-}
-
-void	error_mess(int ac, int choice, t_stack **a, char **nb)
-{
-	if (choice = 1)
-	{
-		if (ac == 2)
-		{
-			ft_free(nb);
-			ft_putendl_fd("Error", 2);
-		}
-	}
-	else if (choice = 0)
-	{
-		ft_freelst(a);
-		ft_putendl_fd("Error", 2);
-	}
+    if (ac == 2)
+        nb = ft_split(av[1], ' ');
+    else
+        nb = av + 1;
+    parsing_args(a, ac, nb);
 }
 
 void	ft_freelst(t_stack *a)
