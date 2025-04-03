@@ -14,8 +14,8 @@
 
 void	push(t_stack **stack, t_stack **stack2)
 {
-	t_stack *temp;
-	t_stack *temp2;
+	t_stack	*temp;
+	t_stack	*temp2;
 
 	temp = malloc(sizeof(t_stack));
 	if (!temp)

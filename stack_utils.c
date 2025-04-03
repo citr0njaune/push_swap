@@ -1,50 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chphan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/03 17:25:08 by chphan            #+#    #+#             */
+/*   Updated: 2025/04/03 17:25:10 by chphan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	init_stack_a(t_stack **a, int ac, char **av)
 {
 	t_stack	*temp;
-	int i;
+	int		i;
 
 	*a = malloc(sizeof(t_stack));
 	temp = *a;
-	parsing_args(&a, ac, av);
+	parsing_args(&a, ac, av, temp);
 }
 
-void	parsing_args(t_stack **a, int ac, char **av)
-{
-	int	i;
-	char	**nb;
-	int	num;
-
-	i = 0;
-	if (ac == 2)
-	nb = ft_split(av[1], ' ');
-	else
-	nb = av + 1;
-	while(nb[i])
-	{
-	if (!is_valide(nb[1]))
-	{
-		error_mess(ac, 1, a);
-		exit(1);
-	}
-	num = ft_atoi(nb[1]);
-	if (is_duplicate(a, num))
-	{
-		error_mess(ac, 0, a);
-		exit (1);
-	}
-	push_num(a, num);
-	i++;
-	}
-}
-void	error_mess(int ac, int choice,  t_stack **a)
+void	error_mess(int ac, int choice, t_stack **a, char **nb)
 {
 	if (choice = 1)
 	{
 		if (ac == 2)
-		ft_free(nb);
-		ft_putendl_fd("Error", 2);  
+		{
+			ft_free(nb);
+			ft_putendl_fd("Error", 2);
+		}
 	}
 	else if (choice = 0)
 	{
@@ -67,15 +53,15 @@ void	ft_freelst(t_stack *a)
 	}
 }
 
-void	ft_free(char **strr)
+void	ft_free(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (strr[i])
+	while (str[i])
 	{
-		free(strr[i]);
+		free(str[i]);
 		i++;
 	}
-	free(strr);
+	free(str);
 }

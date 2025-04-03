@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chphan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/03 17:23:29 by chphan            #+#    #+#             */
+/*   Updated: 2025/04/03 17:23:31 by chphan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	parsing_args(t_stack **a, int ac, char **av, t_stack *temp)
 {
-	int i;
+	int		i;
 	char	**nb;
-	int num;
+	int		num;
 
 	i = 0;
 	if (ac == 2)
 		nb = ft_split(av[1], ' ');
 	else
 		nb = av + 1;
-	while(nb[i] && nb[i + 1])
+	while (nb[i] && nb[i + 1])
 	{
 		if (!is_valide(nb[1]))
 		{
-			error_mess(ac, 1, a);
+			error_mess(ac, 1, a, nb);
 			exit(1);
 		}
 		num = ft_atoi(nb[1]);
 		if (is_duplicate(a, num))
 		{
-			error_mess(ac, 0, a);
+			error_mess(ac, 0, a, nb);
 			exit (1);
 		}
 		push_num(a, num, temp);
@@ -40,7 +52,7 @@ int	is_valide(char *str)
 	num = 0;
 	if (str[i] == 0)
 		return (0);
-	if(str[i] == '-' || str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign *= -1;
@@ -65,7 +77,7 @@ int	is_duplicate(t_stack *a)
 
 	temp = a;
 	temp2 = a;
-	while(temp)
+	while (temp)
 	{
 		while (temp2)
 		{
@@ -81,10 +93,10 @@ int	is_duplicate(t_stack *a)
 
 int	is_sorted(t_stack *a)
 {
-	while(a)
+	while (a)
 	{
 		if (a->next && a->value > a->next->value)
-			return(0);
+			return (0);
 		a = a->next;
 	}
 	return (1);
