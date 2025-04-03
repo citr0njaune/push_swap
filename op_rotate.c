@@ -2,16 +2,16 @@
 
 void	rotate(t_stack **stack)
 {
-    t_stack *temp;
-    t_stack *current;
+	t_stack *temp;
+	    t_stack *current;
 
-    temp = *stack;
-    *stack = *stack->next;
-    current = *stack;
-    while (current->next)
-        current = current->next
-    current->next = temp;
-    temp->next = 0;
+	temp = *stack;
+	*stack = *stack->next;
+	current = *stack;
+	while (current->next)
+		current = current->next;
+	current->next = temp;
+	temp->next = 0;
 }
 
 void	ra(t_stack **a)
