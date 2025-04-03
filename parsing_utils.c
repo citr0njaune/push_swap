@@ -12,33 +12,23 @@
 
 #include "push_swap.h"
 
-void	parsing_args(t_stack **a, int ac, char **av, t_stack *temp)
+void    parsing_args(t_stack **a, int ac, char **nb)
 {
-	int		i;
-	char	**nb;
-	int		num;
+    int i;
 
-	i = 0;
-	if (ac == 2)
-		nb = ft_split(av[1], ' ');
-	else
-		nb = av + 1;
-	while (nb[i] && nb[i + 1])
-	{
-		if (!is_valide(nb[1]))
-		{
-			error_mess(ac, 1, a, nb);
+    i = 0
+    while(nb[i] && nb[i + 1])
+    {
+        if (!is_valide(nb[i]))
+        {
+            if (ac == 2)
+				ft_free(nbr);
+			ft_putendl_fd("Error", 2);
 			exit(1);
-		}
-		num = ft_atoi(nb[1]);
-		if (is_duplicate(a, num))
-		{
-			error_mess(ac, 0, a, nb);
-			exit (1);
-		}
-		push_num(a, num, temp);
-		i++;
-	}
+        }
+        i++;
+    }
+    push_num(a, nb);
 }
 
 int	is_valide(char *str)
@@ -102,14 +92,40 @@ int	is_sorted(t_stack *a)
 	return (1);
 }
 
-void	push_num(t_stack **a, int value, t_stack *temp)
+void    push_num(t_stack **a, char **nb)
 {
-	temp->value = value;
-	temp->next = malloc(sizeof(t_stack));
-	if (!temp->next)
+    int value;
+    int i;
+
+    i = 0;
+    while (nb[i])
+    {
+        value = ft_atoi(nb[i]);
+        push_detail(a, value, nb[i + 1]);
+        i++;
+    }
+    if (is_duplicate(a, value))
 	{
-		ft_freelst(temp);
-		return ;
+		ft_freelst(a);
+		free(b);
+		ft_putendl_fd("Error", 2);
+		return (1);
 	}
-	temp = temp->next;
+}
+void    push_detail(t_stack **a, int value, char *nb)
+{
+    t_stack *temp;
+
+    *a = malloc(sizeof(t_stack));
+    temp = *a;
+    temp->value = value;
+    if (nbr[i + 1])
+    {
+        temp->next = malloc(sizeof(t_node));
+        if (!temp->next)
+            return ;
+        temp = temp->next;
+    }
+    else
+        temp->next = 0;
 }
