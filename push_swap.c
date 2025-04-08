@@ -34,8 +34,8 @@ int	main(int ac, char **av)
 		sort_three(&a);
 	else if (ft_lstsize(a) == 5)
 		sort_five(&a, &b);
-//	else
-//		sort_radix(&a, &b);
+	else
+		sort_radix(&a, &b);
 	ft_freelst(a);
 	ft_freelst(b);
 	return (0);

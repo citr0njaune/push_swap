@@ -56,3 +56,18 @@ void	ft_free(char **str)
 	}
 	free(str);
 }
+
+int	ft_lstsize(t_stack *n)
+{
+	t_stack	*curr;
+	int		i;
+
+	curr = n;
+	i = 0;
+	while (curr != NULL)
+	{
+		i++;
+		curr = curr->next;
+	}
+	return (i);
+}
