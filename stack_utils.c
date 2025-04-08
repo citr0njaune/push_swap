@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chphan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/03 17:25:08 by chphan            #+#    #+#             */
+/*   Updated: 2025/04/03 17:25:10 by chphan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	init_stack(t_stack **a, int ac, char **av)
@@ -32,15 +44,15 @@ void	ft_freelst(t_stack *a)
 	ft_free(temp);
 }
 
-void	ft_free(char **strr)
+void	ft_free(char **str)
 {
 	int	i;
 
 	i = 0;
-	while (strr[i])
+	while (str[i])
 	{
-		free(strr[i]);
+		free(str[i]);
 		i++;
 	}
-	free(strr);
+	free(str);
 }

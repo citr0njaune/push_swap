@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chphan <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/03 17:23:29 by chphan            #+#    #+#             */
+/*   Updated: 2025/04/03 17:23:31 by chphan           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	parsing_args(t_stack **a, char **nb)
@@ -47,7 +59,7 @@ int	is_valide(char *str)
 	}
 	if (str[i])
 		return (0);
-	if ((num * sign) < INT_MIN || (num * sign) > INT_MAX)
+	if ((num * sign) < INT_MIN || (num * sign) > INT_MAX || ft_strlen(str) > 11)
 		return (0);
 	return (1);
 }
