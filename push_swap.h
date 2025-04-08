@@ -45,11 +45,11 @@ void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
-void	parsing_args(t_stack **a, int ac, char **av, t_stack *temp);
+void	parsing_args(t_stack **a, char **nb);
 int		is_valide(char *str);
 int		is_duplicate(t_stack *a);
 int		is_sorted(t_stack *a);
-void	push_num(t_stack **a, int value, t_stack *temp);
+void	push_num(t_stack **a, int value);
 
 void	sort_five(t_stack **a, t_stack **b);
 int		find_min(t_stack **a);
@@ -59,10 +59,12 @@ void	sort_three(t_stack **a);
 
 void	sort_five(t_stack **a, t_stack **b);
 int		find_min(t_stack **a);
-void	min_to_top(t_stack **a, int min_position);
+void	min_to_top(t_stack **a, int pos);
+
+void    sort_radix(t_stack **a, t_stack **b);
+int 	find_max_bits(t_stack **a);
 
 void	init_stack_a(t_stack **a, int ac, char **av);
-void	error_mess(int ac, int choice, t_stack **a);
 void	ft_freelst(t_stack *a);
 void	ft_free(char **str);
 int		ft_lstsize(t_stack *n);

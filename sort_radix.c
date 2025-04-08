@@ -34,7 +34,7 @@ int find_max_bits(t_stack **a)
     int bits;
 
     bits = 0;
-    max = (*a-)>value
+    max = (*a)->value;
     i = 0;
     while (a)
     {
