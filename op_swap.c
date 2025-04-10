@@ -16,9 +16,9 @@ void	swap(t_stack **stack)
 {
 	int	temp;
 
-	temp = *stack->value;
-	*stack->value = *stack->next->value;
-	*stack->next->value = temp;
+	temp = (*stack)->value;
+	(*stack)->value = (*stack)->next->value;
+	(*stack)->next->value = temp;
 }
 
 void	sa(t_stack **a)

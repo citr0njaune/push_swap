@@ -15,7 +15,7 @@ void    sort_radix(t_stack **a, t_stack **b)
         j = -1;
         while (j < size)
         {
-            if (((*a->value >> i) & 1) == 0)
+            if ((((*a)->value >> i) & 1) == 0)
                 pb(b, a);
             else
                 ra(a);
@@ -27,14 +27,14 @@ void    sort_radix(t_stack **a, t_stack **b)
     }
 }
 
-int find_max_bits(t_stack **a)
+int find_max_bits(t_stack *a)
 {
     int i;
     int max;
     int bits;
 
     bits = 0;
-    max = (*a)->value;
+    max = a->value;
     i = 0;
     while (a)
     {

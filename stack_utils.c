@@ -15,7 +15,6 @@
 void	init_stack(t_stack **a, int ac, char **av)
 {
 	char	**nb;
-	int		i;
 
 	if (ac == 2)
 	{
@@ -40,8 +39,8 @@ void	ft_freelst(t_stack *a)
 	{
 		temp = curr;
 		curr = curr->next;
+		free(temp);
 	}
-	ft_free(temp);
 }
 
 void	ft_free(char **str)
@@ -70,4 +69,18 @@ int	ft_lstsize(t_stack *n)
 		curr = curr->next;
 	}
 	return (i);
+}
+
+void	show_stack(t_stack **a)
+{
+	t_stack *l;
+
+	l = *a;
+	printf("SHOWING STACK:\n");
+	while (l)
+	{
+		printf("%d\n", l->value);
+		l = l->next;
+	}
+	printf("END SHOWING STACK\n");
 }

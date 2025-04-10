@@ -18,9 +18,9 @@ void	sort_three(t_stack **a)
 	int	y;
 	int	z;
 
-	x = *a->value;
-	y = *a->next->next;
-	z = *a->next->next->value;
+	x = (*a)->value;
+	y = (*a)->next->value;
+	z = (*a)->next->next->value;
 	if (x < y && y > z && x < z)
 	{
 		sa(a);
