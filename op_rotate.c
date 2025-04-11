@@ -17,13 +17,15 @@ void	rotate(t_stack **stack)
 	t_stack	*temp;
 	t_stack	*current;
 
+	if (!*stack || !(*stack)->next)
+		return ;
 	temp = *stack;
 	*stack = (*stack)->next;
 	current = *stack;
+	temp->next = 0;
 	while (current->next)
 		current = current->next;
 	current->next = temp;
-	temp->next = 0;
 }
 
 void	ra(t_stack **a)

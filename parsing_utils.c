@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	parsing_args(t_stack **a, char **nb)
+void	parsing_args(t_stack **a, char **nb, int ac)
 {
 	int	i;
 
@@ -22,6 +22,9 @@ void	parsing_args(t_stack **a, char **nb)
 		if (!is_valide(nb[i]))
 		{
 			ft_putendl_fd("Error", 2);
+			free_stack(*a);
+			if (ac == 2)
+				ft_free(nb);
 			exit(1);
 		}
 		push_num(a, ft_atoi(nb[i]));
@@ -29,7 +32,9 @@ void	parsing_args(t_stack **a, char **nb)
 	}
 	if (is_duplicate(*a))
 	{
-		ft_freelst(*a);
+		if (ac == 2)
+			ft_free(nb);
+		free_stack(*a);
 		ft_putendl_fd("Error", 2);
 		exit(1);
 	}

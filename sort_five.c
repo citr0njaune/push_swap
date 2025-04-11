@@ -29,10 +29,10 @@ void	sort_five(t_stack **a, t_stack **b)
 
 int	find_min(t_stack *a)
 {
-	int	min;
-	int	pos;
-	int	i;
-	t_stack *temp;
+	int		min;
+	int		pos;
+	int		i;
+	t_stack	*temp;
 
 	temp = a;
 	min = temp->value;
